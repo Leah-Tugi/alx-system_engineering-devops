@@ -17,7 +17,7 @@ echo -e '#!/bin/bash\nchgrp school hello'>13-change_group
 echo -e '#!/bin/bash\nchown vincent:staff *'>100-change_owner_and_group
 echo -e '#!/bin/bash\nchown -h vincent:staff _hello'>101-symbolic_link_permissions
 echo -e '#!/bin/bash\nchown --from=guillaume betty hello'>102-if_only
-echo -e '#!/bin/bash\ntelnet.blinkenlights.nl'>103-Star_Wars
+echo -e '#!/bin/bash\ntelnet towel.blinkenlights.nl'>103-Star_Wars
 chmod u+x *
 chmod -x README.md
 ls
