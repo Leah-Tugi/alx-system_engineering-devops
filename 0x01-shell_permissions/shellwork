@@ -1,0 +1,28 @@
+#!/bin/bash
+echo 'This is what we call fun, find my shell scripts'>README.md
+echo -e '#!/bin/bash\nsu betty'>0-iam_betty
+echo -e '#!/bin/bash\nwhoami'>1-who_am_i
+echo -e '#!/bin/bash\ngroups'>2-groups
+echo -e '#!/bin/bash\nchown betty hello'>3-new_owner
+echo -e '#!/bin/bash\ntouch hello'>4-empty
+echo -e '#!/bin/bash\nchmod u+x hello'>5-execute
+echo -e '#!/bin/bash\nchmod ug+x,o+r hello'>6-multiple_permissions
+echo -e '#!/bin/bash\nchmod ugo+x hello'>7-everybody
+echo -e '#!/bin/bash\nchmod 007 hello'>8-James_Bond
+echo -e '#!/bin/bash\nchmod 753 hello'>9-John_Doe
+echo -e '#!/bin/bash\nchmod --reference=olleh hello'>10-mirror_permissions
+echo -e '#!/bin/bash\nchmod -R +x .'>11-directories_permissions
+echo -e '#!/bin/bash\nmkdir -m 751 m_ydir'>12-directory_permissions
+echo -e '#!/bin/bash\nchgrp school hello'>13-change_group
+echo -e '#!/bin/bash\nchown vincent:staff *'>100-change_owner_and_group
+echo -e '#!/bin/bash\nchown -h vincent:staff _hello'>101-symbolic_link_permissions
+echo -e '#!/bin/bash\nchown --from=guillaume betty hello'>102-if_only
+echo -e '#!/bin/bash\ntelnet.blinkenlights.nl'>103-Star_Wars
+chmod u+x *
+chmod -x README.md
+ls
+cd -
+git add .
+git commit -m 'ALX is the place to be. My shell permission scripts'
+git push
+
