@@ -1,0 +1,27 @@
+echo " Shell variables expansion script"> README.md
+echo -e '#!/bin/bash\nalias ls="rm *"'>0-alias
+echo -e '#!/bin/bash\necho \"hello MyUser"'>1-hello_you
+echo -e '#!/bin/bash\nPATH=$PATH:/action'>2-path
+echo -e '#!/bin/bash\necho $PATH | tr \':' \'\n' | grep -c \'^''>3-paths
+echo -e '#!/bin/bash\nprintenv'>4-global_variables
+echo -e '#!/bin/bash\nset'>5-local_variables
+echo -e '#!/bin/bash\nBEST=\"School"'>6-create_local_variable
+echo -e '#!/bin/bash\nexport BEST="School"'>7-create_global_variable
+echo -e '#!/bin/bash\necho $((128 + $TRUEKNOWLEDGE))'>8-true_knowledge
+echo -e '#!/bin/bash\necho $((POWER/DIVIDE))'>9-divide_and_rule
+echo -e '#!/bin/bash\necho $((BREATH**LOVE))'>10-love_exponent_breath
+echo -e '#!/bin/bash\necho $((2#${BINARY}))'>11-binary_to_decimal
+echo -e '#!/bin/bash\nprintf \'%s\n' {a..z}{a..z} | grep -v \'oo' | sort'>12-combinations
+echo -e '#!/bin/bash\nprintf "%.2f\n\" $NUM'>13-print_float
+echo -e '#!/bin/bash\nprintf \"%x\n" $DECIMAL'>100-decimal_to_hexadecimal
+echo -e '#!/bin/bash\ntr A-Za-z N-ZA-Mn-za-m'>101-rot13
+echo -e '#!/bin/bash\npaste -d, - - | cut -d, -f1'>102-odd
+echo -e '#!/bin/bash\nprintf \"%o\n" $(( $((5#$(echo $WATER | tr water 01234))) + $((5#$(echo $STIR | tr stir. 01234 ))) )) | tr 01234567 bestchol'>103-water_and_stir
+
+chmod u+x *
+chmod u-x README.md
+ls
+cd ..
+git add .
+git commit -m 'shell new scripts'
+git push
