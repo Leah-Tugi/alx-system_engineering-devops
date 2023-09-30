@@ -11,26 +11,7 @@ tasks `102` and `103`.
 
 * **0. Create a SSH RSA key pair**
   * [0-RSA_public_key.pub](./0-RSA_public_key.pub): A public SSH key uploaded for the
-  purposes of Holberton School.
-
-* **1. For Holberton School loop**
-  * [1-for_holberton_school](./1-for_holberton_school): Bash script that displays
-  `Holberton School` 10 times using a `for` loop.
-
-* **2. While Holberton School loop**
-  * [2-while_holberton_school](./2-while_holberton_school): Bash script that
-  displays `Holberton School` 10 times using a `while` loop.
-
-* **3. Until Holberton School loop**
-  * [3-until_holberton_school](./3-until_holberton_school): Bash script that displays
-  `Holberton School` 10 times using an `until` loop.
-
-* **4. If 9, say Hi!**
-  * [4-if_9_say_hi](./4-if_9_say_hi): Bash script that displays `Holberton School`
-  10 times using a `while` loop.
-  * For the 9th iteration, displays `Holberton School` and then `Hi` on a
-  new line.
-  * Uses an `if` statement.
+  purposes of Best School.
 
 * **5. 4 bad luck, 8 is your chance**
   * [5-4_bad_luck_8_is_your_chance](./5-4_bad_luck_8_is_your_chance): Bash script that loops
