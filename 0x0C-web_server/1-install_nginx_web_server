@@ -2,7 +2,7 @@
 #install ngix and put holberton inside
 
 sudo apt-get update -y && \
-sudo apt-get install -y nginx
+sudo apt-get -y install  nginx
 if [ $? -eq 0 ]
 then
     echo -e \
