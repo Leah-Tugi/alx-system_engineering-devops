@@ -1,23 +1,33 @@
 #!/usr/bin/env bash
-# Script to install and configure Nginx web server
+#install ngix and put holberton inside
 
-# Install Nginx
-apt-get update
-apt-get -y install nginx
-
-# Ensure Nginx is listening on port 80
-sed -i 's/80 default_server/80 default_server; root \/usr\/share\/nginx\/html/' /etc/nginx/sites-available/default
-
-# Reload Nginx configuration
-service nginx reload
-
-# Create index.html with "Hello World!" content
-echo "Hello World!" > /usr/share/nginx/html/index.html
-
-# Check if Nginx is running
-if pgrep -x "nginx" >/dev/null
+sudo apt-get update -y && \
+sudo apt-get -y install  nginx
+if [ $? -eq 0 ]
 then
-    echo "Nginx installed and configured successfully!"
+    echo -e \
+"http {
+    root /var/www/html;
+    index index.html;
+    server {
+        listen 80;
+        location \ {
+        }
+    }
+}
+events {
+}" > /etc/nginx/nginx.conf
+    mkdir -p /var/www/html
+    echo "Hello World!" > \
+	/var/www/html/index.html
+    service nginx start
+    if [ $? -ne 0 ]
+    then
+	"Problem starting nginx"
+	exit 1
+    fi
 else
-    echo "Failed to install or configure Nginx!"
+    echo "Could not install nginx"
+    exit 1
 fi
+exit 0
