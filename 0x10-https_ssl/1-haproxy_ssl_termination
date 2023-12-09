@@ -1,0 +1,30 @@
+frontend evahaudi_https_frontend
+    bind *:443 ssl crt /etc/letsencrypt/live/www.evah-audi.tech/fullchain.pem
+    mode http
+    default_backend evahaudi_backend
+    timeout client 30s
+
+frontend evah_https_frontend
+    bind *:443 ssl crt /etc/letsencrypt/live/www.evah-audi.tech/fullchain.pem
+    mode http
+    default_backend audi_backend
+    timeout client 30s
+
+backend evahaudi_backend
+    balance roundrobin
+    mode http
+    option http-server-close
+    option forwardfor
+    server 333119-web-01 127.0.0.1:80 check
+    server 333119-web-02 127.0.0.1:80 check
+    timeout server 30s
+    timeout connect 5s
+   
+
+backend audi_backend
+    balance roundrobin
+    mode http
+    server 333119-web-01 35.175.128.0:80 check
+    server 333119-web-02 100.25.4.246:80 check
+    timeout server 30s
+    timeout connect 5s
